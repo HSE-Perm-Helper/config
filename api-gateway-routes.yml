@@ -11,7 +11,7 @@ spring:
         - id: notification-service
           uri: lb://notification-service
           predicates:
-            - Path=/test/notifications/**
+            - Path=/v2/notifications/**
           filters:
             - TelegramBotAuthFilter
-            - StripPrefix=2
+            - StripPrefix=1
