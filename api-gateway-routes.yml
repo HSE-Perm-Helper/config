@@ -15,3 +15,7 @@ spring:
           filters:
             - TelegramBotAuthFilter
             - StripPrefix=1
+        - id: remote-schedule-service
+          uri: lb://remote-schedule-service
+          predicates:
+            - Path=/remote-schedule
