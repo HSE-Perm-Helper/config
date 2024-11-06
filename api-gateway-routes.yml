@@ -19,3 +19,8 @@ spring:
           uri: lb://remote-schedule-service
           predicates:
             - Path=/remote-schedule
+        - id: remote-schedule-service-management
+          uri: lb://remote-schedule-service
+          predicates:
+            - TelegramBotAuthFilter
+            - Path=/remote-schedule-management
