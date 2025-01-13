@@ -18,7 +18,7 @@ spring:
         - id: remote-schedule-service
           uri: lb://remote-schedule-service
           predicates:
-            - Path=/remote-schedule
+            - Path=/remote-schedule,/remote-schedule/**
         - id: remote-schedule-service-management
           uri: lb://remote-schedule-service
           filters:
