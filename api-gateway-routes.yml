@@ -5,9 +5,13 @@ spring:
         - id: main-backend
           uri: lb://main-backend
           predicates:
-            - Path=/users/**,/user/**,/notifications/**,/v3/schedules/**,/v3/schedule/**,/schedule/**,/v2/users/**,/verification/**
+            - Path=/users/**,/user/**,/notifications/**,/v3/schedules/**,/v3/schedule/**,/schedule/**,/v2/users/**
           filters:
             - TelegramBotAuthFilter
+        - id: main-backend-common
+          uri: lb://main-backend
+          predicates:
+            - Path=/verification/**
         - id: notification-service
           uri: lb://notification-service
           predicates:
